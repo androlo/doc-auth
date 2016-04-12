@@ -4,6 +4,16 @@ Example [Ethereum](https://www.ethereum.org/) DApp that is used for signing docu
 
 Validating a document is done by computing the SHA3-256 hash, and passing the hash into the check function. If the hash has been signed, the application will respond by displaying the time and date when the document was signed.
 
+![docauth01.png](./images/docauth01.png)
+
+### The smart contract
+
+The [SingleSignerAuthority contract](https://github.com/androlo/doc-auth/blob/master/contracts/src/SingleSignerAuthority.sol) is a simple registry for `[bytes32 => uint]` pairs, where the bytes can be anything and the `uint` is a timestamp. Usually the bytes would be a SHA3-256 hash of something like a document, or a binary file.
+
+The only write-operation that is allowed is `sign`, which takes a `bytes32` param and maps it to the current block time. This can only be done by one account; hence the name `SingleSignerAuthority`.
+
+The address of the authority is the address of the account that created the contract, and is recorded automatically when the contract is deployed. The authority cannot be changed.
+
 ### Running the demo
 
 To run the demo you need to have a running public chain node, and know how to interact with it. Instructions can be found on the Ethereum page, or on the official page of the most popular Ethereum client [geth](http://ethereum.github.io/go-ethereum/).
