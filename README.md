@@ -1,6 +1,6 @@
 # doc-auth
 
-Example [Ethereum](https://www.ethereum.org/) DApp that allows the deployer to act as a certificate authority by signing hashes using their Ethereum account.
+Very simple example [Ethereum](https://www.ethereum.org/) DApp that allows the deployer to act as a certificate authority by signing hashes using their Ethereum account.
 
 There are two use-cases for the contract.
 
@@ -58,9 +58,7 @@ If there is no blue `sign` button below the hash field, make sure that the curre
 
 Contract tests are done using [QUnit](http://qunitjs.com/) against an [ethereumjs-testrpc]((https://github.com/ethereumjs/testrpc)) server. This is how you run them:
 
-1. Make sure `node.js` and `npm` is on your path.
-
-**NOTE** To run `testrpc` on Windows you need to do some additional preparation. Instructions can be found [here](https://github.com/ethereumjs/testrpc/wiki/Installing-TestRPC-on-Windows). If you don't intend on using testrpc, this is probably not worth the effort.
+1. Make sure `node.js` and `npm` is on your path. **NOTE** To run `testrpc` on Windows you need to do some additional preparation. Instructions can be found [here](https://github.com/ethereumjs/testrpc/wiki/Installing-TestRPC-on-Windows). If you don't intend on using testrpc, this is probably not worth the effort.
 
 2. cd into the project root and type `npm install`. This will install testrpc locally.
 
