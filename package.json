@@ -1,0 +1,10 @@
+{
+  "name": "doc-auth",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "ethereumjs-testrpc": "^2.0.2"
+  }
+}

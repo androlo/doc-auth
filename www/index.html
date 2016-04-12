@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>DocAuth</title>
+</head>
+<body>
+<div data-role="page" id="starting-page">
+
+</div>
+<div data-role="page" id="main-page">
+
+    <div data-role="header" class="header">
+        <h1 id="app-title">Document Signer</h1>
+    </div>
+
+    <div role="main" class="ui-content">
+        <form>
+            <label for="hash-input">Hash:</label>
+            <input id="hash-input" name="hash" placeholder="0x26FA6C..." required/>
+            <button id="check-hash-button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">
+                Check
+            </button>
+            <button id="sign-hash-button" class="ui-btn btn-add ui-shadow ui-corner-all ui-btn-icon-left ui-icon-plus"
+                    style="display: none;">Sign
+            </button>
+        </form>
+
+        <div id="error-msg" class="not-displayed">
+        </div>
+
+        <ul id="hash-data" data-role="listview" data-inset="true"
+            class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+            <li data-role="list-divider" id="hash-data-title" class="ui-li-divider ui-bar-a"><h2>Hash Information</h2>
+            </li>
+            <li><h3>Hash</h3><span id="hash-data-hash"></span></li>
+            <li><h3>Signed</h3><span id="hash-data-signed">No</span></li>
+        </ul>
+
+        <ul id="authority-data" data-role="listview" data-inset="true"
+            class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+            <li data-role="list-divider" class="ui-li-divider ui-bar-a"><h2>Authority</h2></li>
+            <li><h3>Type</h3><span id="authority-type"></span></li>
+            <li><h3>Authorized Signer</h3><span id="authority-signer"></span></li>
+            <li><h3>Contract</h3><span id="authority-contract"></span></li>
+        </ul>
+
+        <ul id="documents" data-role="listview" data-inset="true"
+            class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+            <li data-role="list-divider" id="documents-title" class="ui-li-divider ui-bar-a"><h2>Documents</h2></li>
+            <li><h4><a style="text-decoration: none;" target="_blank"
+                       href="https://raw.githubusercontent.com/ethereum/wiki/844047bbfc9acfa8acb816a700ddae9125720500/pages/white-paper/%5Benglish%5D-white-paper.md">
+                Ethereum white-paper (2016-04-12)</a></h4>
+                <p>SHA3-256: 0xf6150b13a409d0b11c564b583d295151230ba9eae9c7d93ca2d4c54c95d58699</p></li>
+            <li><h4><a style="text-decoration: none;" target="_blank"
+                       href="https://raw.githubusercontent.com/ethereum/yellowpaper/a1684e07629da042763549da36eeb1f8ea89e396/Paper.tex">
+                Ethereum yellow-paper (2016-04-12)</a></h4>
+                <p>SHA3-256: 0xc5a20a4d026f9817b6ca27a508eac3decf4c0ace1ba7118fe7e5acfd259d13df</p></li>
+            <li><h4><a style="text-decoration: none;" target="_blank"
+                       href="http://szabo.best.vwh.net/contractlanguage.html">
+                Some article about pork bellies</a></h4>
+                <p>SHA3-256:
+                    0x455cf08a3f6057db1b457ae35cab3dfdb2a570b7865c9aa0b4dec7ccb5a5557a</p></li>
+            <li><h4><a style="text-decoration: none;" target="_blank"
+                       href="https://sd.se/wp-content/uploads/2014/09/Stadgar_%C3%A4ndringar-borttagna-2.pdf">
+                SD Bylaws (swedish)</a></h4>
+                <p>SHA3-256: 0xb16fad9cb594f821b91f599d18051300024c3c1e11d6842e3e03ff1042867d4e</p></li>
+        </ul>
+
+        <ul id="transactions" data-role="listview" data-inset="true"
+            class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+            <li data-role="list-divider" class="ui-li-divider ui-bar-a"><h2>Transactions</h2></li>
+        </ul>
+
+    </div>
+    <footer data-role="footer" data-position="fixed">
+        <h4 id="my-address">My address: </h4>
+    </footer>
+
+</div>
+<script type="text/javascript" src="scripts/vendor/web3.min.js"></script>
+<script type="text/javascript" src="scripts/vendor/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="scripts/vendor/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="scripts/vendor/bignumber.min.js"></script>
+<script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>

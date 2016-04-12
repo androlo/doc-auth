@@ -1,0 +1,34 @@
+.btn-add {
+    background-color: rgb(68, 116, 135) !important;
+    text-shadow: none !important;
+    color: #ededed !important;
+}
+
+.btn-add:hover {
+    background-color: rgb(62, 110, 127) !important;
+}
+
+.btn-remove {
+    background-color: rgb(135, 60, 56) !important;
+    text-shadow: none !important;
+    color: #ededed !important;
+}
+
+.btn-remove:hover {
+    background-color: rgb(115, 48, 48) !important;
+}
+
+.tx-status-pending {
+    font-weight: bold !important;
+    color: #3c6879 !important;
+}
+
+.tx-status-success {
+    font-weight: bold !important;
+    color: #247226 !important;
+}
+
+.tx-status-failure {
+    font-weight: bold !important;
+    color: #792626 !important;
+}

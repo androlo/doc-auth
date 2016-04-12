@@ -1,0 +1,111 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "authType",
+    "outputs": [
+      {
+        "name": "authType",
+        "type": "uint8"
+      }
+    ],
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "hash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "signDate",
+    "outputs": [
+      {
+        "name": "signDate",
+        "type": "uint256"
+      }
+    ],
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "signer",
+    "outputs": [
+      {
+        "name": "signer",
+        "type": "address"
+      }
+    ],
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "hash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "signed",
+    "outputs": [
+      {
+        "name": "signed",
+        "type": "bool"
+      }
+    ],
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "hash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "sign",
+    "outputs": [
+      {
+        "name": "error",
+        "type": "uint8"
+      }
+    ],
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "isSigner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "hash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "name": "error",
+        "type": "uint256"
+      }
+    ],
+    "name": "Sign",
+    "type": "event"
+  }
+]
