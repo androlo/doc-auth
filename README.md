@@ -18,7 +18,7 @@ If the page fails to load, you will get an alert. If the alert says that RPC con
 
 - Ethereum is running, and answers to RPC calls on the correct address and port. You can change the address and port at line 8 of `www/scripts/index.js`.
 
-- CORS is set (with geth you add `--rpccorsdomain "*"`)the RPC port is set, the correct contract address is set, and the contract was deployed by `coinbase`, it should detect that the sender is the signer and make the blue `sign` button available.
+- CORS is set (with geth you add `--rpccorsdomain "*"`)
 
 If the page says that contract data can't be read, make sure that:
 
@@ -35,6 +35,12 @@ To create Your own authority You need to do this:
 3. (Optional) Edit the Ethereum RPC port.
 
 4. Run the webpage.
+
+##### Troubleshooting
+
+In addition to the RPC alert, you may now also get an alert that says the contract can't be read. In that case make sure that you updated the `index.js` file with the new contract address.
+
+If there is no blue `sign` button below the hash field, make sure that the current `coinbase` address is the same as the one used when deploying the contract.
 
 ### Testing the contract (node.js)
 
