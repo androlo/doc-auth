@@ -1,6 +1,6 @@
 ﻿(function () {
     "use strict";
-
+    var web3 = new Web3();
     var userAddress;
 
     // NOTE - This is all that needs to change when switching to a new authority contract.
@@ -12,7 +12,7 @@
     var contract;
 
     $(document).ready(function () {
-        var web3 = new Web3();
+
 
         web3.setProvider(httpProvider);
         try {
