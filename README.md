@@ -28,7 +28,7 @@ The web-page points to an Ethereum contract deployed by me, which means I am the
 
 ##### Troubleshooting
 
-If the page fails to load, you will get an alert. If the alert says that RPC connection can't be established, make sure that:
+If the page fails to load, you will get an alert. If the alert says that the RPC server does not respond, make sure that:
 
 - Ethereum is running, and answers to RPC calls on the correct address and port. You can change the address and port at line 8 of `www/scripts/index.js`.
 
@@ -46,9 +46,7 @@ To create Your own authority You need to do this:
 
 2. Open `www/scripts/index.js` and change the `contractAddress` variable (line 7) to the new address.
 
-3. (Optional) Edit the Ethereum RPC port.
-
-4. Run the webpage.
+3. Run the webpage.
 
 ##### Troubleshooting
 
