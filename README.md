@@ -28,7 +28,7 @@ If the page says that contract data can't be read, make sure that:
 
 To create Your own authority You need to do this:
 
-1. Deploy a new instance of `SingleSignerAuthority`. This can be done from the [Mist wallet](https://github.com/ethereum/mist), for example. It does not matter if you add it to the public chain (Homestead), the test-chain (Morden), or a local dev-chain.
+1. Deploy a new instance of `SingleSignerAuthority`. This can be done from the [Mist wallet](https://github.com/ethereum/mist), for example. The bytecode and ABI can be found in `contracts/build`. It does not matter if you add it to the public chain (Homestead), the test-chain (Morden), or a local dev-chain.
 
 2. Open `www/scripts/index.js` and change the `contractAddress` variable (line 7) to the new address.
 
@@ -55,3 +55,9 @@ Contract tests are done using [QUnit](http://qunitjs.com/) against an [ethereumj
 3. cd into the `testserver` folder and run `testserver.js`. Wait for it to print `Ethereum test RPC server listening on port 8545`.
 
 4. Start `www/contract_test.html` in a web-browser.
+
+### Hacking
+
+If you want to edit the smart-contract you need to know how to code in Solidity. The Solidity project page can be found [here](http://solidity.readthedocs.org/en/latest/).
+
+A simple way to add more features to the contract is to copy the code from `contracts/src/SingleSignerAuthority.sol` into the [Online Solidity Compiler](https://chriseth.github.io/browser-solidity/). It has syntax highlighting and does real-time error checking, and even allow you to deploy the contract onto a simulated chain and interact with it - although the output is not formatted so it may be a bit hard to read. Either way, when you are happy with the edits you can just get the bytecode and ABI (interface) from the online compiler and put it into Mist (or whatever you want to use for deploying and interacting with the contract on-chain).
