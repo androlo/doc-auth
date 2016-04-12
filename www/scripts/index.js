@@ -13,7 +13,6 @@
 
     $(document).ready(function () {
 
-
         web3.setProvider(httpProvider);
         try {
             // Set the user address and the web3 default sender address to coinbase.

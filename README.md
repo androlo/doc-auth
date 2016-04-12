@@ -1,8 +1,12 @@
 # doc-auth
 
-Example [Ethereum](https://www.ethereum.org/) DApp that is used for signing documents, and checking if documents has been signed.
+Example [Ethereum](https://www.ethereum.org/) DApp that allows the deployer to act as a certificate authority by signing hashes using their Ethereum account.
 
-Validating a document is done by computing the SHA3-256 hash, and passing the hash into the check function. If the hash has been signed, the application will respond by displaying the time and date when the document was signed.
+There are two use-cases for the contract.
+
+1. Users can load the web-page (locally) and check if a hash is signed by the authority account, or simply load it into the Mist browser and check from there.
+
+2. The contract can be called from other contracts; for example to validate input, contract bytecode, or other on-chain data.
 
 ![docauth01.png](./images/docauth01.png)
 
@@ -16,9 +20,9 @@ The address of the authority is the address of the account that created the cont
 
 ### Running the demo
 
-To run the demo you need to have a running public chain node, and know how to interact with it. Instructions can be found on the Ethereum page, or on the official page of the most popular Ethereum client [geth](http://ethereum.github.io/go-ethereum/).
+To run the demo you need to have a running public chain node, and know how to interact with it. Instructions on how to set up an Ethereum node can be found on the Ethereum project page, and on the official page of the most popular Ethereum client [geth](http://ethereum.github.io/go-ethereum/).
 
-When the Ethereum node is running and answering to RPC calls, just start `www/index.html` in a web-browser. Near the bottom of the page you will find several examples of documents and their hashes that you can paste into the hash field and `check`.
+When the Ethereum node is running (and answering to RPC calls), just start `www/index.html` in a web-browser. Near the bottom of the page you will find several examples of documents and their hashes that you can paste into the hash field and `check`.
 
 The web-page points to an Ethereum contract deployed by me, which means I am the only one allowed to sign hashes (i.e. I am the Authority). The contract is an instance of `SingleSignerAuthority` (which can be found in the `contracts` folder), and is deployed on the public chain.
 
@@ -28,7 +32,7 @@ If the page fails to load, you will get an alert. If the alert says that RPC con
 
 - Ethereum is running, and answers to RPC calls on the correct address and port. You can change the address and port at line 8 of `www/scripts/index.js`.
 
-- CORS is set (with geth you add `--rpccorsdomain "*"`)
+- CORS is set (with `geth` you could add `--rpccorsdomain "*"` to check if this is the issue).
 
 If the page says that contract data can't be read, make sure that:
 
